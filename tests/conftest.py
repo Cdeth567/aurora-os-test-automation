@@ -6,7 +6,7 @@ from appium.options.common import AppiumOptions
 
 @pytest.fixture(scope="session")
 def driver():
-    appium_server_url = f'http://localhost:4723'
+    appium_server_url = 'http://localhost:4723'
     
     appium_server_capabilities = {
         "automationName": "Aurora",
@@ -14,7 +14,8 @@ def driver():
         'platformVersion': '2.2',
         'newCommandTimeout': 86400,
         'appPackage': 'ru.auroraos.ApplicationTemplate',
-        'deviceName': '192.168.2.15',
+        'deviceName': 'host.docker.internal',
+        # "devicePort": 2223,
         'autoLaunch': False,
         'appiumInspector': False,
     }
@@ -26,7 +27,8 @@ def driver():
         options=appium_driver_options
     )
 
-    driver.launch_app()
+    # driver.launch_app()
+    driver.activate_app("ru.auroraos.ApplicationTemplate")
 
     yield driver
     driver.quit()
