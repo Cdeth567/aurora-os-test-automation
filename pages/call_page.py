@@ -7,6 +7,10 @@ class CallPage(BasePage):
         self.wait_visible(CallPageLocators.REMOTE_NAME_TEXT, timeout=10)
         self.wait_visible(CallPageLocators.CONNECTION_TEXT, timeout=10)
 
+    def wait_until_incoming_call_screen_opened(self) -> None:
+        self.wait_visible(CallPageLocators.REMOTE_NAME_TEXT, timeout=10)
+        self.wait_visible(CallPageLocators.CONNECTION_TEXT, timeout=10)
+
     def is_connection_visible(self) -> bool:
         return self.is_visible(CallPageLocators.CONNECTION_TEXT, timeout=5)
 

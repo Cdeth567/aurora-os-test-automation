@@ -17,5 +17,17 @@ class MainPageLocators:
     )
     INCOMING_CALL_BUTTON = (
         By.XPATH,
-        "//*[@objectName='incomingCallButton' or @text='Входящий вызов']",
+        "//*[@objectName='incomingCallButton' or @text='Входящий вызов' or contains(@text, 'Входящий вызов (')]",
     )
+    CALLS = (By.XPATH, "//*[@text='Звонки']")
+    FUNCTIONS = (By.XPATH, "//*[@text='Функции']")
+    
+    HOLDING_SWITCH = (By.XPATH, "//TextSwitch[@text='Удержание']")
+    HOLDING_TITLE = (By.XPATH, "//LabelBase[@text='Удержание']")
+    HOLDING_DESCRIPTION = (By.XPATH, "//*[@text='Вкл/Выкл удержания звонка']")
+
+    DTMF_SWITCH = (By.XPATH, "//TextSwitch[@text='DTMF']")
+    DTMF_TITLE = (By.XPATH, "//LabelBase[@text='DTMF']")
+    DTMF_DESCRIPTION = (By.XPATH, "//*[@text='Вкл/Выкл DTMF (поддержка цифровой клавиатуры)']")
+    DTMF_PLACEHOLDER = (By.XPATH, "//*[@text='Текст DTMF']")
+    INCOMING_COUNTDOWN = (By.XPATH, "//*[contains(@text, 'Входящий вызов (')]")
